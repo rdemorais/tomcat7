@@ -13,6 +13,7 @@ RUN apt-get update && \
     tar -xvf tomcat.tar.gz --strip-components=1 && \
     rm bin/*.bat && \
     rm tomcat.tar.gz* && \
+    rm -rf webapps/ROOT && \
     apt-get purge -y --auto-remove wget
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
